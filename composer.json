@@ -15,7 +15,6 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "grozzzny/easyii2": "dev-master",
-        "grozzzny/adminlte_easyiicms": "dev-master",
         "grozzzny/soc_link": "v2.x-dev",
         "grozzzny/depends": "dev-master",
         "grozzzny/widgets": "dev-master",
