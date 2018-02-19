@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use grozzzny\partners\models\Partners;
+use grozzzny\soc_link\models\SocLink;
 use Yii;
 use yii\easyii2\helpers\WebConsole;
 use yii\easyii2\models\InstallForm;
@@ -75,9 +77,9 @@ class InstallController extends \yii\web\Controller
 
     public function actionStep3()
     {
-        WebConsole::migrate('@vendor/grozzzny/soc_link/migrations');
-        WebConsole::migrate('@vendor/grozzzny/partners/migrations');
         WebConsole::migrate('@vendor/grozzzny/editable/migrations');
+        self::insertPartners();
+        self::insertSoclink();
 
         $result = [];
         $result[] = $this->insertTexts();
@@ -92,6 +94,60 @@ class InstallController extends \yii\web\Controller
         $result[] = $this->insertFiles();
 
         return $this->render('step3', ['result' => $result]);
+    }
+
+    protected static function insertPartners()
+    {
+        WebConsole::migrate('@vendor/grozzzny/partners/migrations');
+        $data = [
+            [
+                'name' => 'template 1',
+                'link' => '#',
+                'logo' => '/images/partners/1.jpg',
+                'status' => '1',
+            ],
+            [
+                'name' => 'template 2',
+                'link' => '#',
+                'logo' => '/images/partners/2.jpg',
+                'status' => '1',
+            ],
+            [
+                'name' => 'template 3',
+                'link' => '#',
+                'logo' => '/images/partners/3.jpg',
+                'status' => '1',
+            ],
+        ];
+
+        foreach ($data as $attributes){
+            $model = new Partners();
+            $model->setAttributes($attributes);
+            $model->save();
+        }
+    }
+
+    protected static function insertSoclink()
+    {
+        WebConsole::migrate('@vendor/grozzzny/soc_link/migrations');
+        $data = [
+            [
+                'name' => 'vk.com',
+                'link' => 'https://vk.com/',
+                'icon' => 'fa fa-vk',
+            ],
+            [
+                'name' => 'instagram.com',
+                'link' => 'https://www.instagram.com/',
+                'logo' => 'fa fa-instagram',
+            ],
+        ];
+
+        foreach ($data as $attributes){
+            $model = new SocLink();
+            $model->setAttributes($attributes);
+            $model->save();
+        }
     }
 
     private function registerI18n()
@@ -587,23 +643,16 @@ class InstallController extends \yii\web\Controller
         $this->db->createCommand('TRUNCATE TABLE `'.Carousel::tableName().'`')->query();
 
         (new Carousel([
-            'image' => '/uploads/carousel/1.jpg',
+            'image' => '/images/carousel/1.jpg',
             'title' => 'Ut enim ad minim veniam, quis nostrud exercitation',
             'text' => 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.',
         ]))->save();
 
         (new Carousel([
-            'image' => '/uploads/carousel/2.jpg',
+            'image' => '/images/carousel/2.jpg',
             'title' => 'Sed do eiusmod tempor incididunt ut labore et',
             'text' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
         ]))->save();
-
-        (new Carousel([
-            'image' => '/uploads/carousel/3.jpg',
-            'title' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-            'text' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-        ]))->save();
-
 
         return 'Carousel data inserted.';
     }

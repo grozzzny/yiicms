@@ -1,8 +1,12 @@
 <?php
+use grozzzny\editable\models\Editable;
+use grozzzny\editable\widgets\EditableWidget;
 use grozzzny\partners\models\Partners;
+use grozzzny\partners\widgets\PartnersWidget;
 use grozzzny\widgets\loader\LoaderWidget;
 use grozzzny\widgets\schema_organization\SchemaOrganizationWidget;
 use yii\bootstrap\Alert;
+use yii\easyii2\helpers\Image;
 use yii\easyii2\models\Setting;
 use yii\easyii2\modules\text\api\Text;
 use yii\web\View;
@@ -63,11 +67,7 @@ $mainPage = Yii::$app->controller->route == 'site/index';
         <div class="content">
             <h4 class="title"><?=Text::get('section-partners-title')?></h4>
             <div class="slider-partners owl-carousel owl-theme">
-                <? foreach(Partners::findAll(['status' => Partners::STATUS_ON]) as $partner):?>
-                    <a class="item" href="<?=$partner->link?>">
-                        <img src="<?= Image::thumb($partner->logo, 400)?>" id="" alt="<?=$partner->name?>" title="<?=$partner->name?>">
-                    </a>
-                <? endforeach;?>
+                <?= PartnersWidget::widget()?>
             </div>
         </div>
     </section>
@@ -76,8 +76,6 @@ $mainPage = Yii::$app->controller->route == 'site/index';
 </div>
 
 <!-- Модуль: вставка кода -->
-<? foreach (Editable::findAll(['status' => Editable::STATUS_ON]) as $editable) {
-    echo $editable->code . PHP_EOL;
-} ?>
+<?= EditableWidget::widget();?>
 
 <?php $this->endContent(); ?>

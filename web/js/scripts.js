@@ -21,10 +21,9 @@
 
             this.sliders.partners.init();
 
-            //this.initScrollReveal();
+            this.initScrollReveal();
 
-            //this.wowInit();
-
+            this.wowInit();
         },
 
         wowInit: function () {
