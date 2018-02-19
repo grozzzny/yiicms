@@ -30,6 +30,9 @@ body {
     margin-left: 0px;
   }
 }
+.container-two-column .right-side .right-side-container {
+  padding: 0 0 0 15px;
+}
 footer,
 .push {
   height: 52px;

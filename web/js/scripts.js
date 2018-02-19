@@ -81,7 +81,7 @@
                         items: 1,
                         margin: 15,
                         autoplay: true,
-                        autoplayTimeout: 4000,
+                        autoplayTimeout: 8000,
                         dots: true,
                         animateOut : "owl-fadeUp-out",
                         animateIn : "owl-fadeUp-in",

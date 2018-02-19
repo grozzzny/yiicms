@@ -24,6 +24,10 @@ class InstallController extends \yii\web\Controller
 {
     public $layout = 'install';
     public $defaultAction = 'step1';
+
+    /**
+     * @var yii\db\Connection
+     */
     public $db;
 
     public $dbConnected = false;
@@ -139,7 +143,7 @@ class InstallController extends \yii\web\Controller
             [
                 'name' => 'instagram.com',
                 'link' => 'https://www.instagram.com/',
-                'logo' => 'fa fa-instagram',
+                'icon' => 'fa fa-instagram',
             ],
         ];
 
@@ -172,6 +176,11 @@ class InstallController extends \yii\web\Controller
         (new Text([
             'text' => 'Welcome on easyii2CMS demo website',
             'slug' => 'index-welcome-title'
+        ]))->save();
+
+        (new Text([
+            'text' => 'Partner',
+            'slug' => 'section-partners-title'
         ]))->save();
 
         return 'Text data inserted.';

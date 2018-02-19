@@ -1,5 +1,6 @@
 <?php
 use grozzzny\soc_link\models\SocLink;
+use grozzzny\soc_link\widgets\SocLinkWidget;
 use yii\web\View;
 /**
  * @var View $this
@@ -16,15 +17,7 @@ use yii\web\View;
             </div>
 
             <div class="col-xs-6 text-right" data-sr="wait 0.5s, then enter right and move 40px over 1s">
-                <ul class="soc-link">
-                    <? foreach (SocLink::find()->all() as $item):?>
-                        <li>
-                            <a href="<?=$item->link?>" title="<?=$item->name?>">
-                                <i class="<?=$item->icon?>"></i>
-                            </a>
-                        </li>
-                    <? endforeach;?>
-                </ul>
+                <?= SocLinkWidget::widget() ?>
             </div>
         </div>
     </div>
