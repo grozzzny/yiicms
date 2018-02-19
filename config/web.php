@@ -7,7 +7,7 @@ $config = [
     'id' => 'app',
     'name' => 'my-site',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'admin'],
     'language' => 'ru-RU',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -20,10 +20,6 @@ $config = [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
-        ],
-        'user' => [
-          //  'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -72,21 +68,64 @@ $config = [
         ],
         'db' => $db,
         'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
             'rules' => [
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',
-
+                'admin/<controller:\w+>/<action:[\w-]+>/<id:\d+>' => 'admin/<controller>/<action>',
+                'admin/<module:\w+>/<controller:\w+>/<action:[\w-]+>/<id:\d+>' => 'admin/<module>/<controller>/<action>'
             ],
         ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
+        'assetManager' => [
+            // uncomment the following line if you want to auto update your assets (unix hosting only)
+            //'linkAssets' => true,
+            'appendTimestamp' => true,
+            'forceCopy' => false,
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js'],
+                ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [YII_DEBUG ? 'css/bootstrap.css' : 'css/bootstrap.min.css'],
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js' => [YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'],
+                ],
             ],
         ],
-        */
+        'user' => [
+            'identityClass' => 'yii\easyii2\models\Admin',
+            'enableAutoLogin' => true,
+            'authTimeout' => 86400,
+        ],
+        'i18n' => [
+            'translations' => [
+                'easyii2' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en-US',
+                    'basePath' => '@easyii2/messages',
+                    'fileMap' => [
+                        'easyii2' => 'admin.php',
+                    ]
+                ]
+            ],
+        ],
+        'formatter' => [
+            'sizeFormatBase' => 1000
+        ],
+    ],
+    'modules' => [
+        'admin' => [
+            'class' => 'yii\easyii2\AdminModule',
+            'modules' => [
+                'page' => 'yii\easyii2\modules\page\PageModule',
+                'partners' => 'grozzzny\partners\PartnersModule',
+                'editable' => 'grozzzny\editable\Module',
+                'soclink' => 'grozzzny\soc_link\SocLinkModule'
+            ]
+        ],
     ],
     'params' => $params,
 ];
@@ -108,5 +147,4 @@ if (YII_ENV_DEV) {
     ];
 }
 
-$config = array_merge_recursive($config, require(dirname(__FILE__) . '/../vendor/grozzzny/easyii2/config/easyii.php'));
 return $config;

@@ -1,82 +1,83 @@
 <?php
-use yii\easyii2\modules\shopcart\api\Shopcart;
-use yii\easyii2\modules\subscribe\api\Subscribe;
-use yii\helpers\Url;
+use grozzzny\partners\models\Partners;
+use grozzzny\widgets\loader\LoaderWidget;
+use grozzzny\widgets\schema_organization\SchemaOrganizationWidget;
+use yii\bootstrap\Alert;
+use yii\easyii2\models\Setting;
+use yii\easyii2\modules\text\api\Text;
+use yii\web\View;
 use yii\widgets\Breadcrumbs;
-use yii\widgets\Menu;
 
-$goodsCount = count(Shopcart::goods());
+/**
+ * @var View $this
+ */
+
+$mainPage = Yii::$app->controller->route == 'site/index';
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
-<div id="wrapper" class="container">
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="<?= Url::home() ?>">easyii2 shop</a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="navbar-menu">
-                    <?= Menu::widget([
-                        'options' => ['class' => 'nav navbar-nav'],
-                        'items' => [
-                            ['label' => 'Home', 'url' => ['site/index']],
-                            ['label' => 'Shop', 'url' => ['shop/index']],
-                            ['label' => 'News', 'url' => ['news/index']],
-                            ['label' => 'Articles', 'url' => ['articles/index']],
-                            ['label' => 'Gallery', 'url' => ['gallery/index']],
-                            ['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                            ['label' => 'FAQ', 'url' => ['faq/index']],
-                            ['label' => 'Contact', 'url' => ['/contact/index']],
-                        ],
-                    ]); ?>
-                    <a href="<?= Url::to(['/shopcart']) ?>" class="btn btn-default navbar-btn navbar-right" title="Complete order">
-                        <i class="glyphicon glyphicon-shopping-cart"></i>
-                        <?php if($goodsCount > 0) : ?>
-                            <?= $goodsCount ?> <?= $goodsCount > 1 ? 'items' : 'item' ?> - <?= Shopcart::cost() ?>$
-                        <?php else : ?>
-                            <span class="text-muted">empty</span>
-                        <?php endif; ?>
-                    </a>
+<?= LoaderWidget::widget(['color' => '#f25757']) ?>
 
-                </div>
-            </div>
-        </nav>
-    </header>
+<?= SchemaOrganizationWidget::widget([
+    'name' => Setting::get('organization_name'),
+    'logo' => Setting::get('organization_logo'),
+    'index' => Setting::get('organization_index'),
+    'city' => Setting::get('organization_city'),
+    'address' => Setting::get('organization_address'),
+    'phone' => Setting::get('organization_phone'),
+    'email' => Setting::get('organization_email'),
+]) ?>
+
+<div id="wrapper">
+
+    <?= $this->render('_header')?>
+
     <main>
-        <?php if($this->context->id != 'site') : ?>
-            <br/>
+        <?php if(!$mainPage) : ?>
+        <div class="container">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                'options' => ['class' => 'breadcrumb breadcrumb-theme']
             ])?>
+        </div>
         <?php endif; ?>
-        <?= $content ?>
-        <div class="push"></div>
+
+        <div class="container">
+            <?php foreach (Yii::$app->session->getAllFlashes() as $type => $message) : ?>
+                <?php if (in_array($type, ['success', 'danger', 'warning', 'info'])): ?>
+                    <?= Alert::widget([
+                        'options' => ['class' => 'alert-dismissible alert-' . $type],
+                        'body' => $message
+                    ]) ?>
+                <?php endif ?>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="main-content <?= $mainPage ? 'main-page' : '' ?>">
+            <?= $content ?>
+        </div>
+
     </main>
-</div>
-<footer>
-    <div class="container footer-content">
-        <div class="row">
-            <div class="col-md-2">
-                Subscribe to newsletters
-            </div>
-            <div class="col-md-6">
-                <?php if(Yii::$app->request->get(Subscribe::SENT_VAR)) : ?>
-                    You have successfully subscribed
-                <?php else : ?>
-                    <?= Subscribe::form() ?>
-                <?php endif; ?>
-            </div>
-            <div class="col-md-4 text-right">
-                ©2018 grozzzny
+
+    <section class="container section-partners">
+        <div class="content">
+            <h4 class="title"><?=Text::get('section-partners-title')?></h4>
+            <div class="slider-partners owl-carousel owl-theme">
+                <? foreach(Partners::findAll(['status' => Partners::STATUS_ON]) as $partner):?>
+                    <a class="item" href="<?=$partner->link?>">
+                        <img src="<?= Image::thumb($partner->logo, 400)?>" id="" alt="<?=$partner->name?>" title="<?=$partner->name?>">
+                    </a>
+                <? endforeach;?>
             </div>
         </div>
-    </div>
-</footer>
+    </section>
+
+    <?= $this->render('_footer')?>
+</div>
+
+<!-- Модуль: вставка кода -->
+<? foreach (Editable::findAll(['status' => Editable::STATUS_ON]) as $editable) {
+    echo $editable->code . PHP_EOL;
+} ?>
+
 <?php $this->endContent(); ?>

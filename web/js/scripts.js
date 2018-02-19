@@ -17,9 +17,9 @@
 
         build: function() {
 
-            //this.sliders.main.init();
+            this.sliders.main.init();
 
-            //this.sliders.partners.init();
+            this.sliders.partners.init();
 
             //this.initScrollReveal();
 
