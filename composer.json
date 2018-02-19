@@ -1,0 +1,72 @@
+{
+    "name": "grozzzny/yiicms",
+    "description": "Yii 2 cms by grozzzny",
+    "keywords": ["yii2", "framework", "basic", "cms"],
+    "homepage": "http://pr-kenig.ru/",
+    "type": "project",
+    "license": "MIT",
+    "support": {
+        "source": "https://github.com/grozzzny/yiicms.git"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "grozzzny/easyii2": "dev-master",
+        "grozzzny/adminlte_easyiicms": "dev-master",
+        "grozzzny/editable": "dev-master",
+        "grozzzny/soc_link": "v2.x-dev",
+        "grozzzny/depends": "dev-master",
+        "grozzzny/widgets": "dev-master",
+        "rmrevin/yii2-minify-view": "dev-master",
+        "grozzzny/catalog": "dev-master"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "yii\\composer\\Installer::postInstall"
+        ],
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject",
+            "yii\\composer\\Installer::postInstall"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ]
+        },
+        "yii\\composer\\Installer::postInstall": {
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
