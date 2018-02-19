@@ -21,8 +21,7 @@
         "grozzzny/editable": "v2.x-dev",
         "grozzzny/partners": "v2.x-dev",
         "rmrevin/yii2-minify-view": "dev-master",
-        "grozzzny/catalog": "dev-master",
-        "twbs/bootstrap": "4.0.0"
+        "grozzzny/catalog": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

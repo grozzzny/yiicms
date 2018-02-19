@@ -19,9 +19,6 @@ use yii\helpers\Html;
 
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="">My button</a>
-                </li>
-                <li>
                     <a href="<?= Yii::$app->homeUrl ?>" class="pull-left hidden-xs"><i class="glyphicon glyphicon-home"></i> <?= Yii::t('easyii2', 'Open site') ?></a>
                 </li>
                 <li>

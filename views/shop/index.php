@@ -23,28 +23,30 @@ function renderNode($node){
 ?>
 
 
-<div class="row">
-    <div class="col-md-8">
-        <h1>
-            <?= $page->seo('h1', $page->title) ?>
-            <a class="btn btn-success" href="<?= File::get('price-list')->file ?>"><i class="glyphicon glyphicon-save"></i> Download price list</a>
-        </h1>
-        <br/>
-        <ul>
-            <?php foreach(Catalog::tree() as $node) echo renderNode($node); ?>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <?= $this->render('_search_form', ['text' => '']) ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>
+                <?= $page->seo('h1', $page->title) ?>
+                <a class="btn btn-success" href="<?= File::get('price-list')->file ?>"><i class="glyphicon glyphicon-save"></i> Download price list</a>
+            </h1>
+            <br/>
+            <ul>
+                <?php foreach(Catalog::tree() as $node) echo renderNode($node); ?>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <?= $this->render('_search_form', ['text' => '']) ?>
 
-        <h4>Last items</h4>
-        <?php foreach(Catalog::last(3) as $item) : ?>
-            <p>
-                <?= Html::img($item->thumb(30)) ?>
-                <?= Html::a($item->title, ['/shop/view', 'slug' => $item->slug]) ?><br/>
-                <span class="label label-warning"><?= $item->price ?>$</span>
-            </p>
-        <?php endforeach; ?>
+            <h4>Last items</h4>
+            <?php foreach(Catalog::last(3) as $item) : ?>
+                <p>
+                    <?= Html::img($item->thumb(30)) ?>
+                    <?= Html::a($item->title, ['/shop/view', 'slug' => $item->slug]) ?><br/>
+                    <span class="label label-warning"><?= $item->price ?>$</span>
+                </p>
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>
 

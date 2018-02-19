@@ -20,9 +20,11 @@ function renderNode($node){
     return $html;
 }
 ?>
-<h1><?= $page->seo('h1', $page->title) ?></h1>
+<div class="container">
+    <h1><?= $page->seo('h1', $page->title) ?></h1>
 
-<br/>
-<ul>
-    <?php foreach(Article::tree() as $node) echo renderNode($node); ?>
-</ul>
+    <br/>
+    <ul>
+        <?php foreach(Article::tree() as $node) echo renderNode($node); ?>
+    </ul>
+</div>
