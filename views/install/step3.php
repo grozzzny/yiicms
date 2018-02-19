@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 
-$this->title = 'EasyiiCMS installation step 3';
+$this->title = 'easyii2CMS installation step 3';
 ?>
 
 <?= $this->render('_steps', ['currentStep' => 3])?>

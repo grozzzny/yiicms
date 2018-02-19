@@ -1,6 +1,6 @@
 <?php
-use yii\easyii\modules\catalog\api\Catalog;
-use yii\easyii\modules\page\api\Page;
+use yii\easyii2\modules\catalog\api\Catalog;
+use yii\easyii2\modules\page\api\Page;
 
 $page = Page::get('page-shop-search');
 

@@ -1,6 +1,6 @@
 <?php
-use yii\easyii\modules\shopcart\api\Shopcart;
-use yii\easyii\modules\subscribe\api\Subscribe;
+use yii\easyii2\modules\shopcart\api\Shopcart;
+use yii\easyii2\modules\subscribe\api\Subscribe;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
@@ -19,7 +19,7 @@ $goodsCount = count(Shopcart::goods());
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= Url::home() ?>">Easyii shop</a>
+                    <a class="navbar-brand" href="<?= Url::home() ?>">easyii2 shop</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbar-menu">

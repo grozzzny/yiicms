@@ -1,6 +1,6 @@
 <?php
-use yii\easyii\modules\feedback\api\Feedback;
-use yii\easyii\modules\page\api\Page;
+use yii\easyii2\modules\feedback\api\Feedback;
+use yii\easyii2\modules\page\api\Page;
 
 $page = Page::get('page-contact');
 

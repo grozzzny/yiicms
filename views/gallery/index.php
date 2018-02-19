@@ -1,7 +1,7 @@
 <?php
-use yii\easyii\helpers\Image;
-use yii\easyii\modules\gallery\api\Gallery;
-use yii\easyii\modules\page\api\Page;
+use yii\easyii2\helpers\Image;
+use yii\easyii2\modules\gallery\api\Gallery;
+use yii\easyii2\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 

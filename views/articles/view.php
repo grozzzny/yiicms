@@ -1,5 +1,5 @@
 <?php
-use yii\easyii\modules\article\api\Article;
+use yii\easyii2\modules\article\api\Article;
 use yii\helpers\Url;
 
 $this->title = $article->seo('title', $article->model->title);

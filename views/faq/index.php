@@ -1,6 +1,6 @@
 <?php
-use yii\easyii\modules\faq\api\Faq;
-use yii\easyii\modules\page\api\Page;
+use yii\easyii2\modules\faq\api\Faq;
+use yii\easyii2\modules\page\api\Page;
 
 $page = Page::get('page-faq');
 

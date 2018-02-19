@@ -4,8 +4,8 @@ namespace app\controllers;
 
 use app\models\AddToCartForm;
 use Yii;
-use yii\easyii\modules\catalog\api\Catalog;
-use yii\easyii\modules\shopcart\api\Shopcart;
+use yii\easyii2\modules\catalog\api\Catalog;
+use yii\easyii2\modules\shopcart\api\Shopcart;
 use yii\web\NotFoundHttpException;
 
 class ShopcartController extends \yii\web\Controller

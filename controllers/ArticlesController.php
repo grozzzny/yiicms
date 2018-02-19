@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use yii\easyii\modules\article\api\Article;
+use yii\easyii2\modules\article\api\Article;
 
 class ArticlesController extends \yii\web\Controller
 {

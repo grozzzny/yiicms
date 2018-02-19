@@ -1,5 +1,5 @@
 <?php
-use yii\easyii\modules\gallery\api\Gallery;
+use yii\easyii2\modules\gallery\api\Gallery;
 
 $this->title = $album->seo('title', $album->model->title);
 $this->params['breadcrumbs'][] = ['label' => 'Gallery', 'url' => ['gallery/index']];

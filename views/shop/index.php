@@ -1,7 +1,7 @@
 <?php
-use yii\easyii\modules\catalog\api\Catalog;
-use yii\easyii\modules\file\api\File;
-use yii\easyii\modules\page\api\Page;
+use yii\easyii2\modules\catalog\api\Catalog;
+use yii\easyii2\modules\file\api\File;
+use yii\easyii2\modules\page\api\Page;
 use yii\helpers\Html;
 
 $page = Page::get('page-shop');

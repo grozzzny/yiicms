@@ -1,6 +1,6 @@
 <?php
-use yii\easyii\modules\guestbook\api\Guestbook;
-use yii\easyii\modules\page\api\Page;
+use yii\easyii2\modules\guestbook\api\Guestbook;
+use yii\easyii2\modules\page\api\Page;
 
 $page = Page::get('page-guestbook');
 

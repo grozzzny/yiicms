@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\models\GadgetsFilterForm;
 use Yii;
-use yii\easyii\modules\catalog\api\Catalog;
+use yii\easyii2\modules\catalog\api\Catalog;
 use yii\web\NotFoundHttpException;
 
 class ShopController extends \yii\web\Controller

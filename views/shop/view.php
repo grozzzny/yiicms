@@ -1,6 +1,6 @@
 <?php
 use app\models\AddToCartForm;
-use yii\easyii\modules\catalog\api\Catalog;
+use yii\easyii2\modules\catalog\api\Catalog;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;

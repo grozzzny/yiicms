@@ -1,7 +1,7 @@
 <?php
 namespace app\controllers;
 
-use yii\easyii\modules\news\api\News;
+use yii\easyii2\modules\news\api\News;
 
 class NewsController extends \yii\web\Controller
 {

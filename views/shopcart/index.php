@@ -1,6 +1,6 @@
 <?php
-use yii\easyii\modules\page\api\Page;
-use yii\easyii\modules\shopcart\api\Shopcart;
+use yii\easyii2\modules\page\api\Page;
+use yii\easyii2\modules\shopcart\api\Shopcart;
 use yii\helpers\Html;
 use yii\helpers\Url;
 

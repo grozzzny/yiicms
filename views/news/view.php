@@ -1,5 +1,5 @@
 <?php
-use yii\easyii\modules\news\api\News;
+use yii\easyii2\modules\news\api\News;
 use yii\helpers\Url;
 
 $this->title = $news->seo('title', $news->model->title);

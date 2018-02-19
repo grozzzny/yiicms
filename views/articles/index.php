@@ -1,6 +1,6 @@
 <?php
-use yii\easyii\modules\article\api\Article;
-use yii\easyii\modules\page\api\Page;
+use yii\easyii2\modules\article\api\Article;
+use yii\easyii2\modules\page\api\Page;
 use yii\helpers\Html;
 
 $page = Page::get('page-articles');

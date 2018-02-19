@@ -3,19 +3,19 @@
 namespace app\controllers;
 
 use Yii;
-use yii\easyii\models\InstallForm;
-use yii\easyii\models\Photo;
-use yii\easyii\models\SeoText;
-use yii\easyii\modules\carousel\models\Carousel;
-use yii\easyii\modules\catalog;
-use yii\easyii\modules\article;
-use yii\easyii\modules\faq\models\Faq;
-use yii\easyii\modules\file\models\File;
-use yii\easyii\modules\gallery;
-use yii\easyii\modules\guestbook\models\Guestbook;
-use yii\easyii\modules\news\models\News;
-use yii\easyii\modules\page\models\Page;
-use yii\easyii\modules\text\models\Text;
+use yii\easyii2\models\InstallForm;
+use yii\easyii2\models\Photo;
+use yii\easyii2\models\SeoText;
+use yii\easyii2\modules\carousel\models\Carousel;
+use yii\easyii2\modules\catalog;
+use yii\easyii2\modules\article;
+use yii\easyii2\modules\faq\models\Faq;
+use yii\easyii2\modules\file\models\File;
+use yii\easyii2\modules\gallery;
+use yii\easyii2\modules\guestbook\models\Guestbook;
+use yii\easyii2\modules\news\models\News;
+use yii\easyii2\modules\page\models\Page;
+use yii\easyii2\modules\text\models\Text;
 
 class InstallController extends \yii\web\Controller
 {
@@ -32,22 +32,26 @@ class InstallController extends \yii\web\Controller
         parent::init();
 
         $this->db = Yii::$app->db;
+
+
         try {
             Yii::$app->db->open();
             $this->dbConnected = true;
-            $this->adminInstalled = Yii::$app->getModule('admin')->installed;
-            if($this->adminInstalled) {
-                $this->shopInstalled = Page::find()->count() > 0 ? true : false;
-            }
         }
         catch(\Exception $e){
             $this->dbConnected = false;
         }
+
+        $this->adminInstalled = Yii::$app->getModule('admin')->installed;
+        if($this->adminInstalled) {
+            $this->shopInstalled = Page::find()->count() > 0 ? true : false;
+        }
+
     }
 
     public function actionStep1()
     {
-        if($this->adminInstalled){
+        if($this->dbConnected && $this->adminInstalled){
             return $this->redirect($this->shopInstalled ? ['/'] : ['/install/step3']);
         }
         return $this->render('step1');
@@ -87,12 +91,12 @@ class InstallController extends \yii\web\Controller
 
     private function registerI18n()
     {
-        Yii::$app->i18n->translations['easyii/install'] = [
+        Yii::$app->i18n->translations['easyii2/install'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@easyii/messages',
+            'basePath' => '@easyii2/messages',
             'fileMap' => [
-                'easyii/install' => 'install.php',
+                'easyii2/install' => 'install.php',
             ]
         ];
     }
@@ -105,7 +109,7 @@ class InstallController extends \yii\web\Controller
         $this->db->createCommand('TRUNCATE TABLE `'.Text::tableName().'`')->query();
 
         (new Text([
-            'text' => 'Welcome on EasyiiCMS demo website',
+            'text' => 'Welcome on easyii2CMS demo website',
             'slug' => 'index-welcome-title'
         ]))->save();
 
@@ -125,7 +129,7 @@ class InstallController extends \yii\web\Controller
             'slug' => 'page-index'
         ]);
         $page1->save();
-        $this->attachSeo($page1, '', 'EasyiiCMS demo', 'yii2, easyii, admin');
+        $this->attachSeo($page1, '', 'easyii2CMS demo', 'yii2, easyii, admin');
 
         $page2 = new Page([
             'title' => 'Shop',

@@ -1,5 +1,5 @@
 <?php
-$this->title = 'EasyiiCMS installation step 2';
+$this->title = 'easyii2CMS installation step 2';
 ?>
 
 <?= $this->render('_steps', ['currentStep' => 2])?>
@@ -8,6 +8,6 @@ $this->title = 'EasyiiCMS installation step 2';
     <div class="text-center"><h2>Control panel details</h2></div>
     <br/>
     <div class="well">
-        <?= $this->render('@easyii/views/install/_form', ['model' => $model])?>
+        <?= $this->render('@easyii2/views/install/_form', ['model' => $model])?>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <?php
-use yii\easyii\modules\news\api\News;
-use yii\easyii\modules\page\api\Page;
+use yii\easyii2\modules\news\api\News;
+use yii\easyii2\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 

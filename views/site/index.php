@@ -1,11 +1,11 @@
 <?php
-use yii\easyii\modules\article\api\Article;
-use yii\easyii\modules\carousel\api\Carousel;
-use yii\easyii\modules\gallery\api\Gallery;
-use yii\easyii\modules\guestbook\api\Guestbook;
-use yii\easyii\modules\news\api\News;
-use yii\easyii\modules\page\api\Page;
-use yii\easyii\modules\text\api\Text;
+use yii\easyii2\modules\article\api\Article;
+use yii\easyii2\modules\carousel\api\Carousel;
+use yii\easyii2\modules\gallery\api\Gallery;
+use yii\easyii2\modules\guestbook\api\Guestbook;
+use yii\easyii2\modules\news\api\News;
+use yii\easyii2\modules\page\api\Page;
+use yii\easyii2\modules\text\api\Text;
 use yii\helpers\Html;
 
 $page = Page::get('page-index');

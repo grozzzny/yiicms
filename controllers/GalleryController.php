@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use yii\easyii\modules\gallery\api\Gallery;
+use yii\easyii2\modules\gallery\api\Gallery;
 
 class GalleryController extends \yii\web\Controller
 {
