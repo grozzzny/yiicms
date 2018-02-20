@@ -65,7 +65,7 @@ $mainPage = Yii::$app->controller->route == 'site/index';
 
     <section class="container section-partners">
         <div class="content">
-            <h2 class="title text-center"><?=Text::get('section-partners-title')?></h2>
+            <h4 class="title"><?=Text::get('section-partners-title')?></h4>
             <div class="slider-partners owl-carousel owl-theme">
                 <?= PartnersWidget::widget()?>
             </div>

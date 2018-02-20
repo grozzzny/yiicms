@@ -51,7 +51,7 @@ $this->title = $page->seo('title', $page->model->title);
 
             <div class="row">
                 <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail animated fadeIn wow" data-wow-duration="1s" data-wow-delay="0s"  data-wow-offset="200">
+                    <div class="thumbnail">
                         <img src="/images/nophoto.jpg" alt="">
                         <div class="caption">
                             <h3>Thumbnail label</h3>
@@ -61,7 +61,7 @@ $this->title = $page->seo('title', $page->model->title);
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4">
-                    <div  class="thumbnail animated fadeIn wow" data-wow-duration="1s" data-wow-delay="0.5s"  data-wow-offset="200">
+                    <div class="thumbnail">
                         <img src="/images/nophoto.jpg" alt="">
                         <div class="caption">
                             <h3>Thumbnail label</h3>
@@ -71,7 +71,7 @@ $this->title = $page->seo('title', $page->model->title);
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail animated fadeIn wow" data-wow-duration="1s" data-wow-delay="1s"  data-wow-offset="200">
+                    <div class="thumbnail">
                         <img src="/images/nophoto.jpg" alt="">
                         <div class="caption">
                             <h3>Thumbnail label</h3>
