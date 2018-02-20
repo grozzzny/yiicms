@@ -19,17 +19,23 @@ $page = Page::get('page-index');
 $this->title = $page->seo('title', $page->model->title);
 ?>
 
-<div class="container">
+<section class="main-slider owl-carousel owl-theme">
+    <? foreach(Carousel::items() as $item): ?>
+        <div class="item">
+            <a href="<?= empty($item->link) ? 'javascript:void(0);' : $item->link ?>">
+                <img src="<?=$item->thumb(1900, 600)?>" alt="<?= $item->title?>">
+                <div class="absolute-layer">
+                    <div class="container">
+                        <div class="title"><?= $item->title?></div>
+                        <div class="text"><?= $item->text?></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <? endforeach;?>
+</section>
 
-    <section class="main-slider owl-carousel owl-theme">
-        <? foreach(Carousel::items() as $item): ?>
-            <div class="item">
-                <a href="<?= empty($item->link) ? 'javascript:void(0);' : $item->link ?>">
-                    <img src="<?=$item->thumb(1200, 500)?>" alt="<?= $item->title?>">
-                </a>
-            </div>
-        <? endforeach;?>
-    </section>
+<div class="container">
 
     <div class="text-center">
         <h1><?= Text::get('index-welcome-title') ?></h1>
@@ -38,38 +44,7 @@ $this->title = $page->seo('title', $page->model->title);
 
 </div>
 
-<div class="container container-two-column">
-    <div class="left-side">
-        <div class="sidebar-left">
-            <div class="list-group">
-
-                <a href="#" class="list-group-item list-group-item-action">
-                    Submenu
-                </a>
-
-                <a href="#" class="list-group-item list-group-item-action">
-                    Submenu
-                </a>
-
-                <a href="#" class="list-group-item list-group-item-action">
-                    Submenu
-                </a>
-
-                <a href="#" class="list-group-item list-group-item-action">
-                    Submenu
-                </a>
-
-                <a href="#" class="list-group-item list-group-item-action">
-                    Submenu
-                </a>
-
-            </div>
-
-        </div>
-    </div>
-    <div class="right-side">
-
-        <div class="right-side-container">
+<div class="container">
 
             <h2>Custom content</h2>
             <p>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</p>
@@ -108,5 +83,3 @@ $this->title = $page->seo('title', $page->model->title);
             </div>
 
         </div>
-    </div>
-</div>

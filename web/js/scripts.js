@@ -79,13 +79,14 @@
                         singleItem: false,
                         loop: true,
                         items: 1,
-                        margin: 15,
+                        margin: 0,
                         autoplay: true,
                         autoplayTimeout: 8000,
-                        dots: true,
+                        dots: false,
                         animateOut : "owl-fadeUp-out",
-                        animateIn : "owl-fadeUp-in",
-                        nav: false
+                        //animateIn : "owl-fadeUp-in",
+                        nav: true,
+                        navText: ['<i class="fa fa-arrow-left"></i>','<i class="fa fa-arrow-right"></i>']
                     });
                 }
             },

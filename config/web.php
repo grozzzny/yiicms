@@ -16,7 +16,7 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '',
+            'cookieValidationKey' => '0ObxT3uD3qXHAOXxWSNI',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -48,6 +48,7 @@ $config = [
                     '@vendor/grozzzny/easyii2/views' => [
                         '@app/views/easyii2'
                     ],
+                    '@vendor/grozzzny/easyii2/modules/carousel/views' => '@app/views/carousel'
                 ],
             ],
             'enableMinify' => !YII_DEBUG,
@@ -123,7 +124,8 @@ $config = [
                 'page' => 'yii\easyii2\modules\page\PageModule',
                 'partners' => 'grozzzny\partners\PartnersModule',
                 'editable' => 'grozzzny\editable\Module',
-                'soclink' => 'grozzzny\soc_link\SocLinkModule'
+                'soclink' => 'grozzzny\soc_link\SocLinkModule',
+                //'carousel' => 'yii\easyii2\modules\carousel\CarouselModule',
             ]
         ],
     ],

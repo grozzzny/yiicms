@@ -20,7 +20,7 @@ $mainPage = Yii::$app->controller->route == 'site/index';
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 
-<?= LoaderWidget::widget(['color' => '#f25757']) ?>
+<?= LoaderWidget::widget(['color' => '#072a52']) ?>
 
 <?= SchemaOrganizationWidget::widget([
     'name' => Setting::get('organization_name'),
