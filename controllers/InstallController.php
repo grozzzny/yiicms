@@ -84,11 +84,11 @@ class InstallController extends \yii\web\Controller
         WebConsole::migrate('@vendor/grozzzny/editable/migrations');
         self::insertPartners();
         self::insertSoclink();
+        self::insertCatalog();
 
         $result = [];
         $result[] = $this->insertTexts();
         $result[] = $this->insertPages();
-        $result[] = $this->insertCatalog();
         //$result[] = $this->insertNews();
         //$result[] = $this->insertArticles();
         $result[] = $this->insertGallery();
@@ -152,6 +152,11 @@ class InstallController extends \yii\web\Controller
             $model->setAttributes($attributes);
             $model->save();
         }
+    }
+
+    protected static function insertCatalog()
+    {
+        WebConsole::migrate('@vendor/grozzzny/catalog/migrations');
     }
 
     private function registerI18n()
@@ -282,143 +287,6 @@ class InstallController extends \yii\web\Controller
         $this->attachSeo($page11, 'Contact us', 'Extended contact title');
 
         return 'Page data inserted.';
-    }
-
-    public function insertCatalog()
-    {
-        if(catalog\models\Category::find()->count()){
-            return '`<b>' . catalog\models\Category::tableName() . '</b>` table is not empty, skipping...';
-        }
-        $this->db->createCommand('TRUNCATE TABLE `'.catalog\models\Category::tableName().'`')->query();
-
-        $fields = [
-            [
-                'name' => 'brand',
-                'title' => 'Brand',
-                'type' => 'select',
-                'options' => ['Samsung', 'Apple', 'Nokia']
-            ],
-            [
-                'name' => 'storage',
-                'title' => 'Storage',
-                'type' => 'string',
-                'options' => ''
-            ],
-            [
-                'name' => 'touchscreen',
-                'title' => 'Touchscreen',
-                'type' => 'boolean',
-                'options' => ''
-            ],
-            [
-                'name' => 'cpu',
-                'title' => 'CPU cores',
-                'type' => 'select',
-                'options' => ['1', '2', '4', '8']
-            ],
-            [
-                'name' => 'features',
-                'title' => 'Features',
-                'type' => 'checkbox',
-                'options' => ['Wi-fi', '4G', 'GPS']
-            ],
-            [
-                'name' => 'color',
-                'title' => 'Color',
-                'type' => 'checkbox',
-                'options' => ['White', 'Black', 'Red', 'Blue']
-            ],
-        ];
-
-        $root = new catalog\models\Category([
-            'title' => 'Gadgets',
-            'fields' => $fields,
-        ]);
-        $root->makeRoot();
-
-        $cat1 = new catalog\models\Category([
-            'title' => 'Smartphones',
-            'fields' => $fields,
-        ]);
-        $cat1->appendTo($root);
-        $this->attachSeo($cat1, 'Smartphones H1', 'Extended smartphones title');
-
-        $cat2 = new catalog\models\Category([
-            'title' => 'Tablets',
-            'fields' => $fields,
-        ]);
-        $cat2->appendTo($root);
-        $this->attachSeo($cat2, 'Tablets H1', 'Extended tablets title');
-
-        if(catalog\models\Item::find()->count()){
-            return '`<b>' . catalog\models\Item::tableName() . '</b>` table is not empty, skipping...';
-        }
-        $time = time();
-
-        $item1 = new catalog\models\Item([
-            'category_id' => $cat1->primaryKey,
-            'title' => 'Nokia 3310',
-            'description' => '<h3>The legend</h3><p>The Nokia 3310 is a GSMmobile phone announced on September 1, 2000, and released in the fourth quarter of the year, replacing the popular Nokia 3210. The phone sold extremely well, being one of the most successful phones with 126 million units sold worldwide.&nbsp;The phone has since received a cult status and is still widely acclaimed today.</p><p>The 3310 was developed at the Copenhagen Nokia site in Denmark. It is a compact and sturdy phone featuring an 84 × 48 pixel pure monochrome display. It has a lighter 115 g battery variant which has fewer features; for example the 133 g battery version has the start-up image of two hands touching while the 115 g version does not. It is a slightly rounded rectangular unit that is typically held in the palm of a hand, with the buttons operated with the thumb. The blue button is the main button for selecting options, with "C" button as a "back" or "undo" button. Up and down buttons are used for navigation purposes. The on/off/profile button is a stiff black button located on the top of the phone.</p>',
-            'available' => 5,
-            'discount' => 0,
-            'price' => 100,
-            'data' => [
-                'brand' => 'Nokia',
-                'storage' => '1',
-                'touchscreen' => '0',
-                'cpu' => 1,
-                'color' => ['White', 'Red', 'Blue']
-            ],
-            'image' => '/uploads/catalog/3310.jpg',
-            'time' => $time
-        ]);
-        $item1->save();
-        $this->attachPhotos($item1, ['/uploads/photos/3310-1.jpg', '/uploads/photos/3310-2.jpg']);
-        $this->attachSeo($item1, 'Nokia 3310');
-
-        $item2 = new catalog\models\Item([
-            'category_id' => $cat1->primaryKey,
-            'title' => 'Galaxy S6',
-            'description' => '<h3>Next is beautifully crafted</h3><p>With their slim, seamless, full metal and glass construction, the sleek, ultra thin edged Galaxy S6 and unique, dual curved Galaxy S6 edge are crafted from the finest materials.</p><p>And while they may be the thinnest smartphones we`ve ever created, when it comes to cutting-edge technology and flagship Galaxy experience, these 5.1" QHD Super AMOLED smartphones are certainly no lightweights.</p>',
-            'available' => 1,
-            'discount' => 10,
-            'price' => 1000,
-            'data' => [
-                'brand' => 'Samsung',
-                'storage' => '32',
-                'touchscreen' => '1',
-                'cpu' => 8,
-                'features' => ['Wi-fi', 'GPS']
-            ],
-            'image' => '/uploads/catalog/galaxy.jpg',
-            'time' => $time - 86400
-        ]);
-        $item2->save();
-        $this->attachPhotos($item2, ['/uploads/photos/galaxy-1.jpg', '/uploads/photos/galaxy-2.jpg', '/uploads/photos/galaxy-3.jpg', '/uploads/photos/galaxy-4.jpg']);
-        $this->attachSeo($item2, 'Samsung Galaxy S6');
-
-        $item3 = new catalog\models\Item([
-            'category_id' => $cat1->primaryKey,
-            'title' => 'Iphone 6',
-            'description' => '<h3>Next is beautifully crafted</h3><p>With their slim, seamless, full metal and glass construction, the sleek, ultra thin edged Galaxy S6 and unique, dual curved Galaxy S6 edge are crafted from the finest materials.</p><p>And while they may be the thinnest smartphones we`ve ever created, when it comes to cutting-edge technology and flagship Galaxy experience, these 5.1" QHD Super AMOLED smartphones are certainly no lightweights.</p>',
-            'available' => 0,
-            'discount' => 10,
-            'price' => 1100,
-            'data' => [
-                'brand' => 'Apple',
-                'storage' => '64',
-                'touchscreen' => '1',
-                'cpu' => 4,
-                'features' => ['Wi-fi', '4G', 'GPS']
-            ],
-            'image' => '/uploads/catalog/iphone.jpg',
-            'time' => $time - 86400 * 2
-        ]);
-        $item3->save();
-        $this->attachPhotos($item3, ['/uploads/photos/iphone-1.jpg', '/uploads/photos/iphone-2.jpg', '/uploads/photos/iphone-3.jpg', '/uploads/photos/iphone-4.jpg']);
-        $this->attachSeo($item3, 'Apple Iphone 6');
-
-        return 'Catalog data inserted.';
     }
 
     public function insertNews()

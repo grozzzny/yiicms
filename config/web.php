@@ -123,6 +123,7 @@ $config = [
                 'page' => 'yii\easyii2\modules\page\PageModule',
                 'partners' => 'grozzzny\partners\PartnersModule',
                 'editable' => 'grozzzny\editable\Module',
+                'catalog' => 'grozzzny\catalog\CatalogModule',
                 'soclink' => 'grozzzny\soc_link\SocLinkModule'
             ]
         ],
