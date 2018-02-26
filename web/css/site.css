@@ -212,3 +212,77 @@ footer,
   font-size: 12px;
   color: #AAA;
 }
+/**
+ * section-callback
+ */
+.section-callback form {
+  padding: 38px 28px 28px 28px;
+  margin: 50px 0 0 0;
+  background: black;
+  background: linear-gradient(#dbe6f3, black);
+  position: relative;
+}
+.section-callback form > * {
+  position: relative;
+}
+.section-callback form:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  right: 1px;
+  background: #fff;
+}
+.section-callback form:after {
+  content: "";
+  display: block;
+  width: 215px;
+  height: 264px;
+  overflow: hidden;
+  background: url(../images/frm-question.png) 0 0;
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+}
+.section-callback form h3 {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 26px;
+  color: #3a3939;
+  margin-right: 250px;
+  line-height: 30px;
+}
+@media only screen and (max-width: 991px) {
+  .section-callback form h3 {
+    font-size: 1.17em;
+    line-height: 1.1;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+.section-callback form .frm-block {
+  overflow: hidden;
+  margin-right: 250px;
+}
+@media only screen and (max-width: 991px) {
+  .section-callback form .frm-block {
+    margin-bottom: 240px;
+    margin-right: 0px;
+    text-align: center;
+  }
+}
+.section-callback form .frm-block .item {
+  padding-right: 30px;
+  display: block;
+  float: left;
+  margin: 0 0 26px 0;
+}
+@media only screen and (max-width: 991px) {
+  .section-callback form .frm-block .item {
+    padding-right: 0px;
+    float: none;
+  }
+}

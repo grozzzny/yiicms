@@ -11,6 +11,7 @@ use yii\easyii2\models\Setting;
 use yii\easyii2\modules\text\api\Text;
 use yii\web\View;
 use yii\widgets\Breadcrumbs;
+use app\widgets\Feedback;
 
 /**
  * @var View $this
@@ -62,6 +63,17 @@ $mainPage = Yii::$app->controller->route == 'site/index';
         </div>
 
     </main>
+
+    <section class="section-callback">
+        <div class="container">
+
+            <?php if(Yii::$app->request->get(Feedback::SENT_VAR)) : ?>
+                <h4 class="text-success"><i class="glyphicon glyphicon-ok"></i> Message successfully sent</h4>
+            <?php else : ?>
+                <?= (new Feedback)->form() ?>
+            <?php endif; ?>
+        </div>
+    </section>
 
     <section class="container section-partners">
         <div class="content">
