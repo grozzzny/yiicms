@@ -286,3 +286,25 @@ footer,
     float: none;
   }
 }
+/**
+ * breadcrumb-theme
+ */
+.breadcrumb-theme {
+  background: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+}
+.breadcrumb-theme a {
+  color: black;
+}
+/**
+ * pagination-theme
+ */
+.pagination-theme a {
+  color: black !important;
+}
+.pagination-theme li.active a {
+  background-color: black !important;
+  border-color: transparent !important;
+  color: white !important;
+}
