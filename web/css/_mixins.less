@@ -1,2 +1,28 @@
 @import "../../vendor/bower-asset/bootstrap/less/variables";
 @import "_variables.less";
+
+/**
+ * line-clamp
+ */
+.line-clamp{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.line-clamp-2{
+  .line-clamp;
+  -webkit-line-clamp: 2;
+}
+.line-clamp-3{
+  .line-clamp;
+  -webkit-line-clamp: 3;
+}
+.line-clamp-4{
+  .line-clamp;
+  -webkit-line-clamp: 4;
+}
+.line-clamp-5{
+  .line-clamp;
+  -webkit-line-clamp: 5;
+}
