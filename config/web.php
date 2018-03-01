@@ -88,7 +88,9 @@ $config = [
                     'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js'],
                 ],
                 'yii\bootstrap\BootstrapAsset' => [
-                    'css' => [YII_DEBUG ? 'css/bootstrap.css' : 'css/bootstrap.min.css'],
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'css' => ['css/bootstrap.css'],
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'],
