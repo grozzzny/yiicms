@@ -38,6 +38,12 @@ $this->title = $page->seo('title', $page->model->title);
 
 </div>
 
+<div class="container text-center">
+    <div class="thumbnail" style="margin: 50px 0;">
+        <img src="https://placehold.it/600x300&text=600x300" alt="placehold.it">
+    </div>
+</div>
+
 <div class="container container-two-column">
     <div class="left-side">
         <div class="sidebar-left">
