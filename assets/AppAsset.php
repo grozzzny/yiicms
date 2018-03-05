@@ -35,5 +35,6 @@ class AppAsset extends AssetBundle
         'grozzzny\depends\sticky\StickyAsset',
         'grozzzny\depends\scrollreveal\ScrollRevalAsset',
         'grozzzny\depends\wow_animations\WowAnimationsAsset',
+        'grozzzny\depends\fancybox\FancyboxAsset',
     ];
 }

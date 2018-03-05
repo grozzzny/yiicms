@@ -21,6 +21,8 @@
 
             this.sliders.partners.init();
 
+            this.gallary.base.init();
+
             this.initScrollReveal();
 
             this.wowInit();
@@ -44,6 +46,23 @@
                 move:"10px",
                 mobile:false
             });
+        },
+
+        gallary: {
+            base:{
+                init: function () {
+                    $("a[rel='gallery']").fancybox({
+                        loop : false,
+                        closeClick : false,
+                        nextEffect : 'none',
+                        prevEffect : 'none',
+                        openEffect : 'elastic',
+                        closeEffect : 'elastic',
+                        openEasing : 'swing',
+                        closeEasing : 'swing'
+                    });
+                }
+            }
         },
 
 
