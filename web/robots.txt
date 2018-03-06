@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /
+
+#Host: https://site-name.com
+#Sitemap: https://site-name.com/sitemap.xml
