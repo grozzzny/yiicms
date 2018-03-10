@@ -27,6 +27,8 @@ class Feedback extends \yii\easyii2\modules\feedback\api\Feedback
         echo Html::hiddenInput('errorUrl', $options['errorUrl'] ? $options['errorUrl'] : Url::current([self::SENT_VAR => 0]));
         echo Html::hiddenInput('successUrl', $options['successUrl'] ? $options['successUrl'] : Url::current([self::SENT_VAR => 1]));
 
+        $model->text = 'Запрос сделан со сраницы: ' . Yii::$app->urlManager->hostInfo . $_SERVER['REQUEST_URI'];
+        echo $form->field($model, 'text')->hiddenInput()->label(false);
         ?>
 
         <h3>Мы всегда рады ответить на ваши вопросы лично</h3>
