@@ -1,0 +1,94 @@
+@import "_variables.less";
+@import "_mixins.less";
+
+@import (css) "https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic";
+
+/*************************
+ * default tags
+ *************************/
+html {
+  overflow-y: scroll;
+}
+html, body{
+  height: 100%;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+*, *:focus, *:hover, *:active, *:visited{
+  outline: none !important;
+}
+
+/*************************
+ * classes theme
+ *************************/
+
+/**
+ * btn-theme
+ */
+.btn-theme{
+  background-color: @color-theme;
+  color: white !important;
+  &:hover, &:active, &:focus{
+    background-color: darken(@color-theme, 10%);
+    color: white !important;
+  }
+}
+/**
+ * breadcrumb-theme
+ */
+.breadcrumb-theme{
+  border-radius: 0;
+  background-color: #f1f1f1;
+  a{
+    color: black;
+  }
+}
+/**
+ * pagination-theme
+ */
+.pagination-theme{
+  a{
+    color: @color-theme !important;
+  }
+  li.active a{
+    background-color: @color-theme !important;
+    border-color: transparent !important;
+    color: white !important;
+  }
+}
+
+
+
+/*************************
+ * classes default
+ *************************/
+
+/**
+ * main-heading
+ */
+.main-heading{
+  border-left: 15px solid @color-theme;
+  border-bottom: 1px solid @color-theme;
+  padding-left: 10px;
+  @media (max-width: @screen-sm-max){
+    font-size: 20px;
+  }
+}
+
+/**
+ * section-heading
+ */
+.section-heading{
+  border-bottom: 1px solid @color-theme-light;
+  @media (max-width: @screen-sm-max){
+    font-size: 18px;
+  }
+}
+
+/**
+ * text-content
+ */
+.text-content{
+  line-height: 23px;
+}

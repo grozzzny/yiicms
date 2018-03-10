@@ -1,12 +1,9 @@
 @charset "UTF-8";
 
-@import "../../vendor/bower-asset/bootstrap/less/variables";
 @import "_variables.less";
 @import "_mixins.less";
 
-@import (css) "https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic";
-
-@import "_default";
+@import "_base";
 @import "_header";
 @import "_footer";
 
@@ -24,6 +21,28 @@
 .small-muted {
   font-size: 12px;
   color: #AAA;
+}
+
+
+.container-two-column{
+  overflow: hidden;
+  .left-side{
+    width: 300px;
+    float: left;
+    @media (max-width: @screen-sm-max){
+      float: none;
+      width: 100%;
+    }
+  }
+  .right-side{
+    margin-left: 300px;
+    @media (max-width: @screen-sm-max){
+      margin-left: 0px;
+    }
+    .right-side-container{
+      padding: 0 0 0 15px;
+    }
+  }
 }
 
 
@@ -103,34 +122,6 @@
     }
   }
 }
-
-
-/**
- * breadcrumb-theme
- */
-.breadcrumb-theme{
-  background: none;
-  border-bottom: 1px solid black;
-  border-radius: 0;
-  a{
-    color: black;
-  }
-}
-
-/**
- * pagination-theme
- */
-.pagination-theme{
-  a{
-    color: black !important;
-  }
-  li.active a{
-    background-color: black !important;
-    border-color: transparent !important;
-    color: white !important;
-  }
-}
-
 
 /**
  * item-gallary
