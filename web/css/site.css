@@ -46,6 +46,12 @@
   align-items: center;
   text-align: center;
 }
+/**
+ * transition-theme
+ */
+.transition-theme {
+  transition: 0.2s all linear;
+}
 /*************************
  * default tags
  *************************/
