@@ -63,6 +63,12 @@
   padding: 0;
   list-style: none;
 }
+/**
+ * no-border-radius
+ */
+.no-border-radius {
+  border-radius: 0;
+}
 /*************************
  * default tags
  *************************/

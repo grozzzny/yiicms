@@ -17,7 +17,9 @@ use yii\web\View;
             </div>
 
             <div class="col-xs-6 text-right" data-sr="wait 0.5s, then enter right and move 40px over 1s">
-                <?= SocLinkWidget::widget() ?>
+                <?= SocLinkWidget::widget(['options' => [
+                    'class' => 'soc-link soc-link-theme'
+                ]]) ?>
             </div>
         </div>
     </div>
