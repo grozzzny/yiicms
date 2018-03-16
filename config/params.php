@@ -2,6 +2,6 @@
 
 return [
     'adminEmail' => 'admin@example.com',
-    'noimage' => '/web/images/noimage.jpg',
-    'nophoto' => '/web/images/nophoto.png',
+    'noimage' => '/images/noimage.jpg',
+    'nophoto' => '/images/nophoto.png',
 ];
