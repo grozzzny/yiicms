@@ -15,6 +15,7 @@ $config = [
     ],
     'components' => [
         'request' => [
+            //'class' => 'grozzzny\lang\components\LangRequest',
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '',
             'baseUrl' => ''
@@ -76,6 +77,7 @@ $config = [
         ],
         'db' => $db,
         'urlManager' => [
+            //'class' => 'grozzzny\lang\components\LangUrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
@@ -133,7 +135,13 @@ $config = [
                 'page' => 'yii\easyii2\modules\page\PageModule',
                 'partners' => 'grozzzny\partners\PartnersModule',
                 'editable' => 'grozzzny\editable\Module',
-                'catalog' => 'grozzzny\catalog\CatalogModule',
+                'catalog' => [
+                    'class' => 'grozzzny\catalog\CatalogModule',
+                    'settings' => [
+                        'modelCategory' => '\app\models\Category',
+                        'modelItem' => '\app\models\Item',
+                    ]
+                ],
                 'soclink' => 'grozzzny\soc_link\SocLinkModule'
             ]
         ],

@@ -85,6 +85,7 @@ class InstallController extends \yii\web\Controller
         self::insertPartners();
         self::insertSoclink();
         self::insertCatalog();
+        self::insertLang();
 
         $result = [];
         $result[] = $this->insertTexts();
@@ -152,6 +153,11 @@ class InstallController extends \yii\web\Controller
             $model->setAttributes($attributes);
             $model->save();
         }
+    }
+
+    protected static function insertLang()
+    {
+        WebConsole::migrate('@vendor/grozzzny/lang/migrations');
     }
 
     protected static function insertCatalog()
