@@ -5,9 +5,8 @@ namespace app\models;
 
 
 use grozzzny\lang\models\Lang;
-use yii\easyii2\modules\article\models\Item;
 
-class ArticleItem extends Item
+class ArticleItem extends \yii\easyii2\modules\article\models\Item
 {
     public static function tableName()
     {
