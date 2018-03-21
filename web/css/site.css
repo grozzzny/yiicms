@@ -112,6 +112,13 @@ body {
   color: white !important;
 }
 /**
+ * modal-theme
+ */
+.modal-theme .modal-dialog .modal-content {
+  border-radius: 0;
+  box-shadow: none;
+}
+/**
  * breadcrumb-theme
  */
 .breadcrumb-theme {

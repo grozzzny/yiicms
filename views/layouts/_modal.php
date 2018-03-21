@@ -9,7 +9,9 @@ use yii\bootstrap\Modal;
 Modal::begin([
     'header' => Yii::t('app', 'My modal'),
     'id' => 'modal-callback',
-    'class' => 'modal-theme'
+    'options' => [
+        'class' => 'modal-theme',
+    ],
 ]);
 
 echo (new Feedback)->form();
