@@ -1,7 +1,6 @@
 <?
 use yii\helpers\Url;
 use yii\helpers\Html;
-use grozzzny\editable\models\Base;
 use yii\web\View;
 
 /**
@@ -39,7 +38,7 @@ $sort = $data->getSort();
             <?= $item->file ?>
         </td>
         <td class="status vtop">
-            <?= Html::checkbox('', $item->status == Base::STATUS_ON, [
+            <?= Html::checkbox('', $item->status == $model::STATUS_ON, [
                 'class' => 'my-switch',
                 'data-slug' => $item::getSlugModel(),
                 'data-id' => $item->id,
