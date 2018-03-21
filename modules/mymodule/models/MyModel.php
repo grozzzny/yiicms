@@ -6,6 +6,7 @@ use yii\data\BaseDataProvider;
 use yii\easyii2\components\ActiveQuery;
 use yii\easyii2\components\FastModel;
 use yii\easyii2\components\FastModelInterface;
+use yii\easyii2\helpers\Image;
 
 /**
  * Class Book
@@ -86,5 +87,16 @@ class MyModel extends FastModel implements FastModelInterface
     public function enablePhotoManager()
     {
         return false;
+    }
+
+    /**
+     * @param null|integer $width
+     * @param null|integer $height
+     * @param bool $crop
+     * @return string
+     */
+    public function getPreview($width = null, $height = null, $crop = true){
+        $image = empty($this->preview)? \Yii::$app->params['noimage'] : $this->preview;
+        return Image::thumb($image, $width, $height, $crop);
     }
 }
