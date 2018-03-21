@@ -8,6 +8,7 @@ use yii\easyii2\modules\news\api\NewsObject;
 use yii\easyii2\modules\page\api\Page;
 use yii\easyii2\modules\text\api\Text;
 use yii\helpers\Html;
+use yii\web\View;
 
 /**
  * @var \yii\web\View $this
@@ -36,6 +37,11 @@ $this->title = $page->seo('title', $page->model->title);
         <p><?= $page->text ?></p>
     </div>
 
+</div>
+
+<div class="container">
+    <? $this->on(View::EVENT_BEGIN_BODY, function () { echo Yii::$app->view->render('_modal');});?>
+    <a href="#modal-callback" data-toggle="modal" class="btn btn-theme"><?= Yii::t('app', 'Contact us')?></a>
 </div>
 
 <div class="container text-center">
