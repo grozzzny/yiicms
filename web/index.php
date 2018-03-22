@@ -1,7 +1,8 @@
 <?php
 
 // comment out the following two lines when deployed to production
-defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('LOCALHOST') or define('LOCALHOST', in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1','::1']));
+defined('YII_DEBUG') or define('YII_DEBUG', LOCALHOST);
 defined('YII_ENV') or define('YII_ENV', 'dev');
 
 require __DIR__ . '/../vendor/autoload.php';
