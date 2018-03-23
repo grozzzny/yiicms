@@ -27,8 +27,15 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
+
+        //Bootstrap 3
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
+
+        //Bootstrap 4
+        //'grozzzny\depends\bootstrap4\Bootstrap4Asset',
+        //'grozzzny\depends\bootstrap4\Bootstrap4PluginAsset',
+
         'grozzzny\depends\jquery_migrate\JqueryMigrateAsset',
         'grozzzny\depends\font_awesome\FontAwesomeAsset',
         'grozzzny\depends\owl_carousel\OwlAsset',
