@@ -110,7 +110,7 @@ $config = [
         'user' => [
             'identityClass' => 'yii\easyii2\models\Admin',
             'enableAutoLogin' => true,
-            'authTimeout' => 86400,
+            'authTimeout' => 1552000,
         ],
         'i18n' => [
             'translations' => [
