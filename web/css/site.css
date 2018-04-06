@@ -456,3 +456,10 @@ footer,
 .item-gallary:hover:before {
   opacity: 1;
 }
+/**
+ * slider-partners
+ */
+.slider-partners .item img {
+  height: 40px;
+  width: auto;
+}
