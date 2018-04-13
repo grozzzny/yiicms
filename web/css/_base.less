@@ -103,5 +103,19 @@ body{
  * text-content
  */
 .text-content{
+  font-family: inherit !important;
   line-height: 23px;
+  img{
+    max-width: 100%;
+  }
+  table{
+    width: 100%;
+    td, th{
+      border: 1px solid @color-theme;
+      padding: 3px;
+    }
+    tr:nth-child(odd){
+      background-color: @color-theme-opacity-10;
+    }
+  }
 }

@@ -174,7 +174,22 @@ body {
  * text-content
  */
 .text-content {
+  font-family: inherit !important;
   line-height: 23px;
+}
+.text-content img {
+  max-width: 100%;
+}
+.text-content table {
+  width: 100%;
+}
+.text-content table td,
+.text-content table th {
+  border: 1px solid #000000;
+  padding: 3px;
+}
+.text-content table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 footer,
 .push {
