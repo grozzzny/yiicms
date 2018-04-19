@@ -142,6 +142,7 @@ $config = [
                         'modelItem' => '\app\models\Item',
                     ]
                 ],
+                'sitemap' => 'grozzzny\sitemap\Module',
                 'soclink' => 'grozzzny\soc_link\SocLinkModule'
             ]
         ],
