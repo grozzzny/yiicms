@@ -1,0 +1,195 @@
+/**
+ * line-clamp
+ */
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic";
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+}
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+}
+.line-clamp-5 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+}
+/**
+ * flex-center
+ */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/**
+ * transition-theme
+ */
+.transition-theme {
+  transition: 0.2s all linear;
+}
+.relative {
+  position: relative;
+}
+/**
+ * list-no-style
+ */
+.list-no-style {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/**
+ * no-border-radius
+ */
+.no-border-radius {
+  border-radius: 0;
+}
+/**
+ * no-padding
+ */
+.no-padding {
+  padding: 0;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+/*************************
+ * default tags
+ *************************/
+html {
+  overflow-y: scroll;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+*,
+*:focus,
+*:hover,
+*:active,
+*:visited {
+  outline: none !important;
+}
+/*************************
+ * classes theme
+ *************************/
+/**
+ * btn-theme
+ */
+.btn-theme {
+  background-color: #000000;
+  color: white !important;
+}
+.btn-theme:hover,
+.btn-theme:active,
+.btn-theme:focus {
+  background-color: #000000;
+  color: white !important;
+}
+/**
+ * modal-theme
+ */
+.modal-theme .modal-dialog .modal-content {
+  border-radius: 0;
+  box-shadow: none;
+}
+/**
+ * breadcrumb-theme
+ */
+.breadcrumb-theme {
+  border-radius: 0;
+  background-color: #f1f1f1;
+}
+.breadcrumb-theme a {
+  color: black;
+}
+/**
+ * pagination-theme
+ */
+.pagination-theme a {
+  color: #000000 !important;
+}
+.pagination-theme li.active a {
+  background-color: #000000 !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+/*************************
+ * classes default
+ *************************/
+/**
+ * main-heading
+ */
+.main-heading {
+  border-left: 15px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding-left: 10px;
+}
+@media (max-width: 991px) {
+  .main-heading {
+    font-size: 20px;
+  }
+}
+/**
+ * section-heading
+ */
+.section-heading {
+  border-bottom: 1px solid #333333;
+}
+@media (max-width: 991px) {
+  .section-heading {
+    font-size: 18px;
+  }
+}
+/**
+ * text-content
+ */
+.text-content {
+  line-height: 23px;
+}
+.text-content,
+.text-content * {
+  font-family: inherit !important;
+}
+.text-content img {
+  max-width: 100%;
+}
+.text-content table {
+  width: 100%;
+}
+.text-content table td,
+.text-content table th {
+  border: 1px solid #000000;
+  padding: 3px;
+}
+.text-content table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}

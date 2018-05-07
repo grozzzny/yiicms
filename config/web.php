@@ -115,7 +115,7 @@ $config = [
         'user' => [
             'identityClass' => 'yii\easyii2\models\Admin',
             'enableAutoLogin' => true,
-            'authTimeout' => 86400,
+            'authTimeout' => 1552000,
         ],
         'i18n' => [
             'translations' => [
@@ -147,6 +147,7 @@ $config = [
                         'modelItem' => '\app\models\Item',
                     ]
                 ],
+                'sitemap' => 'grozzzny\sitemap\Module',
                 'soclink' => 'grozzzny\soc_link\SocLinkModule'
             ]
         ],

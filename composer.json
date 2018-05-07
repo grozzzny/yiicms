@@ -22,7 +22,8 @@
         "grozzzny/partners": "v2.x-dev",
         "rmrevin/yii2-minify-view": "dev-master",
         "grozzzny/catalog": "v2.x-dev",
-        "grozzzny/lang": "dev-master"
+        "grozzzny/lang": "dev-master",
+        "grozzzny/sitemap": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

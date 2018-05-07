@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use grozzzny\partners\models\Partners;
+use grozzzny\sitemap\models\Sitemap;
 use grozzzny\soc_link\models\SocLink;
 use Yii;
 use yii\easyii2\helpers\WebConsole;
@@ -86,6 +87,7 @@ class InstallController extends \yii\web\Controller
         self::insertSoclink();
         self::insertCatalog();
         self::insertLang();
+        self::insertSitemap();
 
         $result = [];
         $result[] = $this->insertTexts();
@@ -153,6 +155,18 @@ class InstallController extends \yii\web\Controller
             $model->setAttributes($attributes);
             $model->save();
         }
+    }
+
+    protected static function insertSitemap()
+    {
+        WebConsole::migrate('@vendor/grozzzny/sitemap/migrations');
+
+        (new Sitemap([
+            'loc' => '/',
+            'lastmod' => Sitemap::lastmodFormat(time()),
+            'changefreq' => Sitemap::CHANGEFREQ_MONTHLY,
+            'priority' => Sitemap::PRIORITY_90,
+        ]))->save();
     }
 
     protected static function insertLang()

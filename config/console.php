@@ -11,6 +11,7 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@webroot' => '@app/web',
     ],
     'components' => [
         'cache' => [
@@ -25,6 +26,17 @@ $config = [
             ],
         ],
         'db' => $db,
+    ],
+    'modules' => [
+        'sitemap' => [
+            'class' => 'grozzzny\sitemap\Module',
+            'domain' => '',
+            'generatedByLink' => 'http://pr-kenig.ru',
+            'generatedByName' => 'PRkenig',
+            'controllerMap' => [
+                'console' => 'app\commands\SitemapController'
+            ]
+        ]
     ],
     'params' => $params,
     /*

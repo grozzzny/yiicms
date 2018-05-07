@@ -3,7 +3,7 @@ IndexIgnore */*
 RewriteEngine On
 
 RewriteCond %{REQUEST_URI} !^/(web)
-RewriteRule ^(assets|css|js|images|uploads|minify|fonts)/(.*)$ /web/$1/$2 [L]
+RewriteRule ^(assets|css|js|images|uploads|minify|fonts|sitemaps)/(.*)$ /web/$1/$2 [L]
 RewriteRule (.*) /web/$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f

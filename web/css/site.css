@@ -176,6 +176,24 @@ body {
 .text-content {
   line-height: 23px;
 }
+.text-content,
+.text-content * {
+  font-family: inherit !important;
+}
+.text-content img {
+  max-width: 100%;
+}
+.text-content table {
+  width: 100%;
+}
+.text-content table td,
+.text-content table th {
+  border: 1px solid #000000;
+  padding: 3px;
+}
+.text-content table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 footer,
 .push {
   height: 52px;
@@ -455,4 +473,11 @@ footer,
 }
 .item-gallary:hover:before {
   opacity: 1;
+}
+/**
+ * slider-partners
+ */
+.slider-partners .item img {
+  height: 40px;
+  width: auto;
 }
