@@ -105,7 +105,7 @@ $config = [
 //                'grozzzny\depends\bootstrap4\Bootstrap4Asset' => [
 //                    'basePath' => '@webroot',
 //                    'baseUrl' => '@web',
-//                    'css' => ['css/bootstrap4.css'],
+//                    'css' => ['css/bootstrap4/bootstrap.css'],
 //                ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'],
