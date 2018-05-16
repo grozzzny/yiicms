@@ -68,7 +68,7 @@ $config = [
             'webPath' => '@web', // path alias to web base
             'basePath' => '@webroot', // path alias to web base
             'minifyPath' => '@webroot/minify', // path alias to save minify result
-            'jsPosition' => [ \yii\web\View::POS_HEAD ], // positions of js files to be minified
+            //'jsPosition' => [ \yii\web\View::POS_HEAD ], // positions of js files to be minified
             'forceCharset' => 'UTF-8', // charset forcibly assign, otherwise will use all of the files found charset
             'expandImports' => true, // whether to change @import on content
             'compressOptions' => ['extra' => true], // options for compress
