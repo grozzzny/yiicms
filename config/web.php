@@ -172,4 +172,19 @@ if (YII_ENV_DEV) {
     ];
 }
 
+/**
+ * Заглушка
+ */
+if (!LOCALHOST) {
+    $config['modules']['coming_soon'] = [
+        'class' => 'app\modules\coming_soon\ComingSoonModule',
+        'settings' => []
+    ];
+    $config['catchAll'] = ['coming_soon'];
+
+    //debug off
+    $key = array_search('debug', $config['bootstrap']);
+    unset($config['bootstrap'][$key]);
+}
+
 return $config;
