@@ -177,7 +177,7 @@ if (YII_ENV_DEV) {
  */
 if (!LOCALHOST) {
     $config['modules']['coming_soon'] = [
-        'class' => 'app\modules\coming_soon\ComingSoonModule',
+        'class' => 'grozzzny\coming_soon\ComingSoonModule',
         'settings' => []
     ];
     $config['catchAll'] = ['coming_soon'];
