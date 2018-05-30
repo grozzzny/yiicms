@@ -68,7 +68,7 @@ $config = [
             'webPath' => '@web', // path alias to web base
             'basePath' => '@webroot', // path alias to web base
             'minifyPath' => '@webroot/minify', // path alias to save minify result
-            'jsPosition' => [ \yii\web\View::POS_HEAD ], // positions of js files to be minified
+            //'jsPosition' => [ \yii\web\View::POS_HEAD ], // positions of js files to be minified
             'forceCharset' => 'UTF-8', // charset forcibly assign, otherwise will use all of the files found charset
             'expandImports' => true, // whether to change @import on content
             'compressOptions' => ['extra' => true], // options for compress
@@ -170,6 +170,21 @@ if (YII_ENV_DEV) {
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
     ];
+}
+
+/**
+ * Заглушка
+ */
+if (!LOCALHOST) {
+    $config['modules']['coming_soon'] = [
+        'class' => 'app\modules\coming_soon\ComingSoonModule',
+        'settings' => []
+    ];
+    $config['catchAll'] = ['coming_soon'];
+
+    //debug off
+    $key = array_search('debug', $config['bootstrap']);
+    unset($config['bootstrap'][$key]);
 }
 
 return $config;

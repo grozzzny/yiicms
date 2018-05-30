@@ -23,6 +23,7 @@
         "rmrevin/yii2-minify-view": "dev-master",
         "grozzzny/catalog": "v2.x-dev",
         "grozzzny/lang": "dev-master",
+        "grozzzny/coming_soon": "dev-master",
         "grozzzny/sitemap": "dev-master"
     },
     "require-dev": {
