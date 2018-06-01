@@ -14,7 +14,7 @@ class Category extends \grozzzny\catalog\models\Category implements CatalogInter
 
     public function getMainCategorySlug()
     {
-        if(empty($this->category_slug)) throw new Exception('Empty variable $category_slug');
+        if(empty($this->category_slug) && get_called_class() != 'app\models\Category') throw new Exception('Empty variable $category_slug');
 
         return $this->category_slug;
     }

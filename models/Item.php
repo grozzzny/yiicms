@@ -23,8 +23,6 @@ class Item extends \grozzzny\catalog\models\Item implements CatalogInterface
 
     public function getPublicLink($category_slug = '')
     {
-        if(empty($category_slug)) throw new Exception('Empty variable $category_slug');
-
         if(empty($category_slug) || $category_slug == $this->mainCategorySlug) {
             return Url::to(['/'.$this->mainCategorySlug.'/view/'.$this->slug]);
         } else {
