@@ -1,4 +1,6 @@
 <?php
+
+use grozzzny\widgets\seo\Seo;
 use yii\easyii2\modules\article\api\Article;
 use yii\easyii2\modules\carousel\api\Carousel;
 use yii\easyii2\modules\gallery\api\Gallery;
@@ -18,6 +20,13 @@ use yii\web\View;
 $page = Page::get('page-index');
 
 $this->title = $page->seo('title', $page->model->title);
+
+Seo::widget([
+    'title' => $this->title,
+    'description' => $page->seo('description', ''),
+    'image' => Yii::$app->urlManager->baseUrl.'/images/noimage.jpg',
+    'keywords' => $page->seo('keywords', ''),
+]);
 ?>
 
 <div class="container">
