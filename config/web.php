@@ -152,6 +152,13 @@ $config = [
             ]
         ],
     ],
+    //coming_soon
+    'on beforeAction' => function() {
+        if(isset($_GET['open'])){
+            setcookie("dev","true",time() + 30*24*60*60);
+            exit('<html><head><meta http-equiv="refresh" content="0;/"></head><body></body></html>');
+        }
+    },
     'params' => $params,
 ];
 
@@ -175,7 +182,7 @@ if (YII_ENV_DEV) {
 /**
  * Заглушка
  */
-if (!LOCALHOST) {
+if (empty($_COOKIE['dev'])) {
     $config['modules']['coming_soon'] = [
         'class' => 'grozzzny\coming_soon\ComingSoonModule',
         'settings' => []
