@@ -36,6 +36,10 @@ class AppAsset extends AssetBundle
         //'grozzzny\depends\bootstrap4\Bootstrap4Asset',
         //'grozzzny\depends\bootstrap4\Bootstrap4PluginAsset',
 
+        //Material Design for Bootstrap 4
+        //'grozzzny\depends\mdbootstrap\MDBootstrapAsset',
+        //'grozzzny\depends\mdbootstrap\MDBootstrapPluginAsset',
+
         'grozzzny\depends\jquery_migrate\JqueryMigrateAsset',
         'grozzzny\depends\font_awesome\FontAwesomeAsset',
         'grozzzny\depends\owl_carousel\OwlAsset',

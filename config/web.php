@@ -110,6 +110,21 @@ $config = [
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'],
                 ],
+//                'grozzzny\depends\mdbootstrap\MDBootstrapAsset' => [
+//                    'basePath' => '@webroot',
+//                    'baseUrl' => '@web',
+//                    'css' => ['css/mdbootstrap/mdb.css'],
+//                ],
+//                'grozzzny\depends\mdbootstrap\MDBootstrapPluginAsset' => [
+//                    'chart' => true,
+//                    'enhancedModals' => true,
+//                    'formsFree' => true,
+//                    'jqueryEasing' => true,
+//                    'scrollingNavbar' => true,
+//                    'velocity' => true,
+//                    'waves' => true,
+//                    'wow' => true,
+//                ],
             ],
         ],
         'user' => [

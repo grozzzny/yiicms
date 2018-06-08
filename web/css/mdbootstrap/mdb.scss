@@ -1,0 +1,66 @@
+/*!
+ * Material Design for Bootstrap 4
+ * Version: MDB Free 4.5.4
+ *
+ *
+ * Copyright: Material Design for Bootstrap
+ * https://mdbootstrap.com/
+ *
+ * Read the license: https://mdbootstrap.com/license/
+ *
+ *
+ * Documentation: https://mdbootstrap.com/
+ *
+ * Getting started: https://mdbootstrap.com/getting-started/
+ *
+ * Tutorials: https://mdbootstrap.com/bootstrap-tutorial/
+ *
+ * Templates: https://mdbootstrap.com/templates/
+ *
+ * Support: https://mdbootstrap.com/support/
+ *
+ * Contact: office@mdbootstrap.com
+ *
+ * Atribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js , Hammer.js
+ *
+ */
+
+@charset "UTF-8";
+
+// Bootstrap
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/bootstrap/functions";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/bootstrap/variables";
+
+// CORE
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/mixins";
+// Your custom variables
+@import "custom-variables";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/colors";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/variables";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/global";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/helpers";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/typography";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/masks";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/core/waves";
+
+// FREE
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/animations-basic";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/animations-extended";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/buttons";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/cards";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/dropdowns";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/input-group";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/navbars";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/pagination";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/badges";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/modals";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/carousels";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/forms";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/msc";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/footers";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/list-group";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/tables";
+@import "../../../vendor/grozzzny/depends/mdbootstrap/src/scss/free/depreciated";
+
+// Your custom styles
+@import "custom-styles";
