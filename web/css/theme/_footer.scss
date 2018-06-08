@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@import "../../../vendor/twbs/bootstrap/scss/functions";
+@import "../bootstrap4/_variables";
+@import "../bootstrap4/_mixins";
+
+footer.page-footer {
+  background-color: #383838;
+}

@@ -23,7 +23,7 @@ use yii\easyii2\modules\text\models\Text;
 
 class InstallController extends \yii\web\Controller
 {
-    public $layout = 'install';
+    public $layout = '@app/views/layouts/install';
     public $defaultAction = 'step1';
 
     /**

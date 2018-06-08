@@ -64,7 +64,7 @@ class SiteController extends Controller
         if(!Yii::$app->getModule('admin')->installed){
             return $this->redirect(['/install/step1']);
         }
-        return $this->render('index');
+        return $this->render('index_bootstrap_4_example');
     }
 
     /**

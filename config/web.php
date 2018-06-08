@@ -13,6 +13,8 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    //Bootstrap 4
+    'layout' => '@app/views/layoutsBootstrap4/main',
     'components' => [
         'request' => [
             //'class' => 'grozzzny\lang\components\LangRequest',
@@ -97,34 +99,35 @@ $config = [
                 'yii\web\JqueryAsset' => [
                     'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js'],
                 ],
-                'yii\bootstrap\BootstrapAsset' => [
+//                'yii\bootstrap\BootstrapAsset' => [
+//                    'basePath' => '@webroot',
+//                    'baseUrl' => '@web',
+//                    'css' => ['css/bootstrap.css'],
+//                ],
+//                'yii\bootstrap\BootstrapPluginAsset' => [
+//                    'js' => [YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'],
+//                ],
+
+                'grozzzny\depends\bootstrap4\Bootstrap4Asset' => [
                     'basePath' => '@webroot',
                     'baseUrl' => '@web',
-                    'css' => ['css/bootstrap.css'],
+                    'css' => ['css/bootstrap4/bootstrap.css'],
                 ],
-//                'grozzzny\depends\bootstrap4\Bootstrap4Asset' => [
-//                    'basePath' => '@webroot',
-//                    'baseUrl' => '@web',
-//                    'css' => ['css/bootstrap4/bootstrap.css'],
-//                ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
-                    'js' => [YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'],
+                'grozzzny\depends\mdbootstrap\MDBootstrapAsset' => [
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'css' => ['css/mdbootstrap/mdb.css'],
                 ],
-//                'grozzzny\depends\mdbootstrap\MDBootstrapAsset' => [
-//                    'basePath' => '@webroot',
-//                    'baseUrl' => '@web',
-//                    'css' => ['css/mdbootstrap/mdb.css'],
-//                ],
-//                'grozzzny\depends\mdbootstrap\MDBootstrapPluginAsset' => [
-//                    'chart' => true,
-//                    'enhancedModals' => true,
-//                    'formsFree' => true,
-//                    'jqueryEasing' => true,
-//                    'scrollingNavbar' => true,
-//                    'velocity' => true,
-//                    'waves' => true,
-//                    'wow' => true,
-//                ],
+                'grozzzny\depends\mdbootstrap\MDBootstrapPluginAsset' => [
+                    'chart' => true,
+                    'enhancedModals' => true,
+                    'formsFree' => true,
+                    'jqueryEasing' => true,
+                    'scrollingNavbar' => true,
+                    'velocity' => true,
+                    'waves' => true,
+                    'wow' => true,
+                ],
             ],
         ],
         'user' => [

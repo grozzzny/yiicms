@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic");
+
+@import "../../../vendor/twbs/bootstrap/scss/functions";
+@import "../bootstrap4/_variables";
+@import "../bootstrap4/_mixins";
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+html,
+body,
+header,
+.jarallax {
+  height: 700px;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .jarallax {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .jarallax {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 650px) {
+  header .jarallax h1 {
+    margin-bottom: .5rem !important;
+  }
+  header .jarallax h5 {
+    margin-bottom: .5rem !important;
+  }
+}
+
+@media (min-width: 660px) and (max-width: 700px) {
+  header .jarallax h1 {
+    margin-bottom: 1.5rem !important;
+  }
+  header .jarallax h5 {
+    margin-bottom: 1.5rem !important;
+  }
+}

@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+@import "../../../vendor/twbs/bootstrap/scss/functions";
+@import "../bootstrap4/_variables";
+@import "../bootstrap4/_mixins";
+
+@import "_base";
+@import "_header";
+@import "_footer";
+
+@media (max-width: 450px) {
+  .display-3 {
+    font-size: 3rem;
+  }
+}
+
+.btn-floating {
+  width: 47px;
+  height: 47px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  margin: 10px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding: 0;
+  vertical-align: middle;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+  &:hover {
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)
+  }
+  i {
+    font-size: 1.25rem;
+    line-height: 47px;
+    display: inline-block;
+    width: inherit;
+    text-align: center;
+    color: #fff;
+  }
+}
+
+.btn-li {
+  background-color: #0082ca!important;
+  color: #fff!important;
+  &:hover {
+    background-color: #0092e4
+  }
+  &.active,&:active,&:focus {
+    background-color: #004064
+  }
+  &.dropdown-toggle {
+    background-color: #0082ca!important
+  }
+  &.dropdown-toggle:focus,&.dropdown-toggle:hover {
+    background-color: #0092e4!important
+  }
+  &:not([disabled]):not(.disabled).active,&:not([disabled]):not(.disabled):active,.show>&.dropdown-toggle {
+    background-color: #004064!important
+  }
+}

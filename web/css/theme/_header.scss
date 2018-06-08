@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+@import "../../../vendor/twbs/bootstrap/scss/functions";
+@import "../bootstrap4/_variables";
+@import "../bootstrap4/_mixins";
+
+.top-nav-collapse {
+  background-color: #7283A7 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #7283A7 !important;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #7283A7!important;
+  }
+}
