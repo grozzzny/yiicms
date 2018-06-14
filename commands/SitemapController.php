@@ -7,10 +7,13 @@ use grozzzny\sitemap\controllers\ConsoleController;
 use grozzzny\sitemap\models\Sitemap;
 
 /**
- * CRON
+ * Console
  * php yii sitemap/console/update
  *
  * or
+ *
+ * crontab -e
+ * 0 5 * * * /opt/php7.0/bin/php /home/c/cd51932/public_html/yii sitemap/console/update
  *
  * After save
  * WebConsole::console()->runAction('sitemap/console/update');
