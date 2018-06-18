@@ -52,3 +52,81 @@ header,
     margin-bottom: 1.5rem !important;
   }
 }
+
+.breadcrumb{
+  a{
+    color: inherit;
+  }
+}
+
+.pagination{
+  background-color: transparent !important;
+}
+
+/**
+ * text-content
+ */
+.text-content{
+  &, *{
+    font-family: inherit !important;
+  }
+  img{
+    max-width: 100%;
+    height: initial;
+  }
+  table{
+    width: 100%;
+    td, th{
+      border: 1px solid $gray-300;
+      padding: 0.5rem;
+    }
+    tr:nth-child(odd){
+      background-color: $color-theme-opacity-10;
+    }
+  }
+}
+
+.section .section-heading {
+  margin-top: 2rem;
+  margin-bottom: 4rem
+}
+
+.section-heading {
+  h1 {
+    margin-top: 2rem;
+    margin-bottom: 3rem
+  }
+
+  p {
+    margin-bottom: 3rem;
+    margin-right: 15%;
+    margin-left: 15%
+  }
+}
+.section-description {
+  color: #757575;
+  margin-bottom: 4rem;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center
+}
+
+@media (max-width: 992px) {
+  .section-description {
+    margin-left:5%;
+    margin-right: 5%
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .display-4{
+    font-size: 1.5rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .wow.wow-mobile-off {
+    animation-name: none !important;
+    visibility: visible !important;
+  }
+}
