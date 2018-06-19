@@ -198,6 +198,26 @@
 }
 
 
+/**
+ * card-circle
+ */
+.card {
+  .card-circle {
+    border: 2px solid $gray-300;
+    height: 7.5rem;
+    width: 7.5rem;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+    .fa {
+      font-size: 4rem
+    }
+  }
+}
+
+
+
+
 
 
 /**
